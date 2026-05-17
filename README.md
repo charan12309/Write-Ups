@@ -7,7 +7,6 @@ CTF challenges, and HTB machines.
 - HTTP in Detail
 - Vulnerability 101
 - Web Security Essentials
+- Intro to Pen Testing
 
-## Goals
-- 1 writeup per week minimum
 - Topics: HTB machines, CTF challenges, CPTS modules
