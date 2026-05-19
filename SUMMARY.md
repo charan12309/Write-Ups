@@ -12,3 +12,4 @@
     * [HTB-VPN](readme/cheat-sheets/htb-vpn.md)
     * [Common-Ports](readme/cheat-sheets/page-3.md)
     * [TMUX](readme/cheat-sheets/tmux.md)
+    * [VIM](readme/cheat-sheets/vim.md)

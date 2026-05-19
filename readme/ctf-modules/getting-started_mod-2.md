@@ -93,3 +93,9 @@ Terminal multiplexers, like `tmux` or `Screen`, are great utilities for expandin
 
 
 
+#### VIM:
+
+Vim is a great text editor that can be used for writing code or editing text files on Linux systems.&#x20;
+
+[https://vimsheet.com/](https://vimsheet.com/)
+
