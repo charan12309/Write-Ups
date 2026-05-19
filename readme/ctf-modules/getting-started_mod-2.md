@@ -32,9 +32,9 @@ Web Server Vulnerabilities and Web Application Flaws (OWASP Top 10)
 
 {% embed url="https://owasp.org/Top10/2025/" %}
 
-### Common Tools:
+### Common Tools :
 
-#### Using SSH:
+#### Using SSH :
 
 Secure Shell is a network protocol that runs on port 22 by default and provides users a secure way to access a computer remotely.
 
@@ -42,7 +42,7 @@ SSH can be configured with password authentication or passwordless using public-
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-#### Using Netcat:
+#### Using Netcat :
 
 Netcat, ncat or nc is used to interact with TCP/UDP Ports.
 
@@ -68,7 +68,9 @@ Then there is also Socat which is called as Netcat on steriods.A [standalone bin
 
 Socat also supports forwarding ports and connecting to serial devices.
 
-1. Port Forwarding :
+
+
+1. **Port Forwarding :**
 
 When you hack a target network, you often find a central server (like a database) that is completely hidden from the internet behind a firewall.
 
@@ -76,7 +78,18 @@ You cannot talk to it directly.
 
 But if you have already compromised the public web server sitting right next to it, you can tell that web server: _"Take any traffic I send to you on Port X, and automatically forward it to the hidden database on Port Y."_
 
-2. Connecting to Serial Devices :
+
+
+2. **Connecting to Serial Devices :**
 
 * Serial Devices: Physical hardware components (like routers, IoT devices, or microchips) that transmit data sequentially, one bit at a time.
 * Security Purpose: Involves physically opening a device's casing, connecting a cable directly to diagnostic pins on the circuit board (like UART), and using tools to read raw data or drop straight into a root command line without a network connection and password.
+
+#### TMUX :
+
+Terminal multiplexers, like `tmux` or `Screen`, are great utilities for expanding a standard Linux terminal's features, like having multiple windows within one terminal and jumping between them.&#x20;
+
+[https://tmuxcheatsheet.com/](https://tmuxcheatsheet.com/)
+
+
+
