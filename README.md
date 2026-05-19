@@ -2,7 +2,7 @@
 
 ***
 
-Notes, walkthroughs, and writeups by Ankam Charan Teja — B.Tech Cybersecurity student pursuing HTB CPTS.
+Notes, walkthroughs, and writeups 
 
 ### Contents
 
