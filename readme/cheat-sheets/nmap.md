@@ -31,3 +31,9 @@ nmap --script smb-vuln-ms17-010 IP # EternalBlue check
 nmap -sV --script=banner IP 
 nc -nv IP PORT                 # manual banner grab
 ```
+
+### Aggressive scan
+
+```
+nmap -A -p{Port} IP
+```

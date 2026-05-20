@@ -190,3 +190,18 @@ Fingerprinted → Google "vsFTPd 3.0.3 CVE"\
 
 ### SMB :
 
+SMB (Server Message Block) is a prevalent protocol on Windows machines that provides many vectors for vertical and lateral movement. `Nmap` has many scripts for enumerating SMB, such as [smb-os-discovery.nse](https://nmap.org/nsedoc/scripts/smb-os-discovery.html), which will interact with the SMB service to extract the reported operating system version.
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+```
+nmap -A -p{Port} IP
+```
+
+This is an Aggressive scan.
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+#### Why This Matters in Pentesting
+
+The text is demonstrating the progression of enumeration. You start by finding an open port (`445`), then you use specialized tools (NSE scripts or `-A` flags) to pull the banners and exact software versions. Once you have those precise versions (e.g., _Windows 7 SP1_ or _Samba 4.6.2_), you can cross-reference them against public vulnerability databases to find specific, actionable exploits like EternalBlue.
