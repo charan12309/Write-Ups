@@ -2,9 +2,9 @@
 description: Step-by-step workflow for CTF and exam-style targets.
 ---
 
-# Workflow
+# Workflow-Service Enumeration
 
-Use this page when you need a repeatable flow for the topics covered in **Getting started**.
+Use this page when you need a repeatable flow for the <mark style="color:$success;">topics covered in</mark> <mark style="color:$success;"></mark><mark style="color:$success;">**Getting started**</mark><mark style="color:$success;">.</mark>
 
 ### Quick loop
 
