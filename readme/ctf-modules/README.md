@@ -5,7 +5,7 @@ This section stores module notes, summaries, and study checkpoints.
 ### Current pages
 
 * [Introduction to the penetration tester path](intro_to_penetration_testing.md)
-* [Getting started](getting-started_mod-2.md)
+* [Getting started](getting-started_mod-2/)
 
 ### Suggested use
 

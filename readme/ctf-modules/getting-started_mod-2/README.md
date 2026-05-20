@@ -4,14 +4,14 @@ Use this page for first-pass concepts, common tools, and early service checks.
 
 ### Cheat sheets
 
-| Cheat sheet                               | Focus                                          |
-| ----------------------------------------- | ---------------------------------------------- |
-| [Common ports](../cheat-sheets/page-3.md) | Default ports and quick service lookup         |
-| [TMUX](../cheat-sheets/tmux.md)           | Session, window, and pane shortcuts            |
-| [VIM](../cheat-sheets/vim.md)             | Fast editing and navigation                    |
-| [Nmap](../cheat-sheets/nmap.md)           | Common scans, NSE scripts, and banner grabbing |
-| [SMB](../cheat-sheets/smb.md)             | Share enumeration and access commands          |
-| [SNMP](../cheat-sheets/snmp.md)           | `snmpwalk` and community string checks         |
+| Cheat sheet                                  | Focus                                          |
+| -------------------------------------------- | ---------------------------------------------- |
+| [Common ports](../../cheat-sheets/page-3.md) | Default ports and quick service lookup         |
+| [TMUX](../../cheat-sheets/tmux.md)           | Session, window, and pane shortcuts            |
+| [VIM](../../cheat-sheets/vim.md)             | Fast editing and navigation                    |
+| [Nmap](../../cheat-sheets/nmap.md)           | Common scans, NSE scripts, and banner grabbing |
+| [SMB](../../cheat-sheets/smb.md)             | Share enumeration and access commands          |
+| [SNMP](../../cheat-sheets/snmp.md)           | `snmpwalk` and community string checks         |
 
 ## Foundations
 
@@ -19,7 +19,7 @@ Use this page for first-pass concepts, common tools, and early service checks.
 
 The shell takes user input and passes commands to the operating system to perform a specific function.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port
 
@@ -27,9 +27,9 @@ Ports are virtual points where network connections begin and end.
 
 They allow a computer to route different types of traffic simultaneously over a single network connection by mapping specific data streams to distinct software processes (e.g., SSH vs. web requests).
 
-{% include "../../.gitbook/includes/protocol-comparison-tcp-vs....md" %}
+{% include "../../../.gitbook/includes/protocol-comparison-tcp-vs....md" %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Web server
 
@@ -51,7 +51,7 @@ Secure Shell is a network protocol that runs on port 22 by default and provides 
 
 SSH can use password authentication or public-key authentication with a public and private key pair.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Using Netcat
 
@@ -63,7 +63,7 @@ Its primary use is connecting to shells.
 
 Netcat can connect to any listening port and interact with the service on that port.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Netcat can also be used to grab a banner from a target IP and port.
 
@@ -112,7 +112,7 @@ Nmap is used to scan ports and let us know the services that are running.
 
 Basic Nmap scan. This checks the 1,000 most common ports and runs a TCP scan by default:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap <TARGET_IP>
@@ -122,7 +122,7 @@ We can use the `-sC` parameter to specify that `Nmap` scripts should be used to 
 
 <br>
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap -sV -sC -p- <TARGET_IP>
@@ -182,17 +182,17 @@ Fingerprinted → Google "vsFTPd 3.0.3 CVE"\
 
 `Nmap` scan of the default port for FTP (21) reveals the vsftpd 3.0.3 installation that we identified previously. Further, it also reports that anonymous authentication is enabled and that a `pub` directory is available.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB
 
 SMB (Server Message Block) is a prevalent protocol on Windows machines that provides many vectors for vertical and lateral movement. `Nmap` has many scripts for enumerating SMB, such as [smb-os-discovery.nse](https://nmap.org/nsedoc/scripts/smb-os-discovery.html), which will interact with the SMB service to extract the reported operating system version.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap -A -p<TARGET_PORT> <TARGET_IP>
@@ -200,7 +200,7 @@ nmap -A -p<TARGET_PORT> <TARGET_IP>
 
 This is an aggressive scan.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 #### Why This Matters in Pentesting
 
@@ -220,7 +220,7 @@ Listing available shares:
 smbclient -N -L \\\\<TARGET_IP>
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 After finding a non-default share like `users`, we attempt to connect to it.
 
@@ -228,7 +228,7 @@ After finding a non-default share like `users`, we attempt to connect to it.
 smbclient \\\\<TARGET_IP>\\<SHARE_NAME>
 ```
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 If this fails, we need to find valid credentials elsewhere and then try again.
 
@@ -238,7 +238,7 @@ smbclient -U <USERNAME> \\\\<TARGET_IP>\\<SHARE_NAME>
 
 After this, the tool asks for a password. Once inside the `smb: \>` prompt, it functions similarly to a basic FTP or Linux shell.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 We can now use the `get` command to download the `passwords.txt` file.
 
@@ -261,7 +261,7 @@ snmpwalk -v 2c -c public <TARGET_IP> 1.3.6.1.2.1.1.5.0
 * `<TARGET_IP>`: The target IP address.
 * `1.3.6.1.2.1.1.5.0`: This OID points directly to the system's hostname.
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 If the community string fails, use `onesixtyone` to brute-force it.
 
@@ -272,7 +272,8 @@ onesixtyone -c dict.txt <TARGET_IP>
 * `onesixtyone`: A highly efficient, multi-threaded scanner built specifically to brute-force SNMP community strings.
 * `-c dict.txt`: Passes a text file containing a dictionary of common community strings (e.g., `public`, `private`, `internal`, `manager`, `cisco`).
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-### Web Enumeration
 
+
+## Web Enumeration
