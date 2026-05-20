@@ -4,6 +4,15 @@
 
 Use this page for first-pass concepts, common tools, and early service checks.
 
+### Cheat sheets
+
+| Cheat sheet                               | Focus                                          |
+| ----------------------------------------- | ---------------------------------------------- |
+| [Common ports](../cheat-sheets/page-3.md) | Default ports and quick service lookup         |
+| [TMUX](../cheat-sheets/tmux.md)           | Session, window, and pane shortcuts            |
+| [VIM](../cheat-sheets/vim.md)             | Fast editing and navigation                    |
+| [Nmap](../cheat-sheets/nmap.md)           | Common scans, NSE scripts, and banner grabbing |
+
 ## Common Terms
 
 ### Shell :
@@ -180,6 +189,4 @@ Fingerprinted → Google "vsFTPd 3.0.3 CVE"\
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB :
-
-This section is reserved for SMB notes, commands, and examples.
 

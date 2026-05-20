@@ -19,5 +19,5 @@ Notes, walkthroughs, and writeups.
 
 ### Profiles
 
-* GitHub: [github.com/charan12309](https://github.com/charan12309)
+* GitHub: [github.com/ankamteja](https://github.com/ankamteja)
 * Medium: [medium.com/@ankamcharantejaa](https://medium.com/@ankamcharantejaa)
