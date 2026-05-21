@@ -24,8 +24,11 @@ Use this page for first-pass concepts, common tools, and early service checks.
 
 ### Workflows
 
-* [Workflow-Service Enumeration](wf-service-enumeration.md)
-* [Workflow-Web Enumeration](wf-web-enumeration/)
+* [WF-Service Enumeration](wf-service-enumeration.md)
+* [WF-Web Enumeration](wf-web-enumeration/)
+* [WF-Reverse Shell](exploitation/wf-reverse-shell.md)
+* [WF-Bind Shell](exploitation/wf-bind-shell.md)
+* [WF-Web Shell](exploitation/wf-web-shell.md)
 
 ## Foundations
 
@@ -33,7 +36,7 @@ Use this page for first-pass concepts, common tools, and early service checks.
 
 The shell takes user input and passes commands to the operating system to perform a specific function.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port
 
@@ -43,7 +46,7 @@ They allow a computer to route different types of traffic simultaneously over a 
 
 {% include "../../../.gitbook/includes/protocol-comparison-tcp-vs....md" %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Web server
 
@@ -65,7 +68,7 @@ Secure Shell is a network protocol that runs on port 22 by default and provides 
 
 SSH can use password authentication or public-key authentication with a public and private key pair.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Using Netcat
 
@@ -126,7 +129,7 @@ Nmap is used to scan ports and let us know the services that are running.
 
 Basic Nmap scan. This checks the 1,000 most common ports and runs a TCP scan by default:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap <TARGET_IP>
@@ -136,7 +139,7 @@ We can use the `-sC` parameter to specify that `Nmap` scripts should be used to 
 
 <br>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap -sV -sC -p- <TARGET_IP>
@@ -234,7 +237,7 @@ Listing available shares:
 smbclient -N -L \\\\<TARGET_IP>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After finding a non-default share like `users`, we attempt to connect to it.
 
@@ -242,7 +245,7 @@ After finding a non-default share like `users`, we attempt to connect to it.
 smbclient \\\\<TARGET_IP>\\<SHARE_NAME>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If this fails, we need to find valid credentials elsewhere and then try again.
 
@@ -252,7 +255,7 @@ smbclient -U <USERNAME> \\\\<TARGET_IP>\\<SHARE_NAME>
 
 After this, the tool asks for a password. Once inside the `smb: \>` prompt, it functions similarly to a basic FTP or Linux shell.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can now use the `get` command to download the `passwords.txt` file.
 
@@ -292,7 +295,7 @@ onesixtyone -c dict.txt <TARGET_IP>
 
 Use this section for first-pass web checks and fast follow-up.
 
-Start with the [Workflow-Web Enumeration](wf-web-enumeration/) flow.
+Start with the [WF-Web Enumeration](wf-web-enumeration/) flow.
 
 ### Gobuster
 
@@ -472,7 +475,7 @@ WordPress found at `/IP/wordpress`
 
 After service fingerprinting, the next goal is to find public exploits that match the exact version.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 **Searchsploit tip:** Use `-m` to copy an exploit into your current directory.
 
@@ -597,20 +600,26 @@ Related cheat sheet:
 
 ## Types of shells
 
-Use a shell after code execution.
+Use shell workflows after you get code execution.
 
-It gives you persistent, interactive access without rerunning the exploit for every command.
+They turn one exploit path into usable access.
+
+### Shell workflows
+
+* [WF-Reverse Shell](exploitation/wf-reverse-shell.md)
+* [WF-Bind Shell](exploitation/wf-bind-shell.md)
+* [WF-Web Shell](exploitation/wf-web-shell.md)
 
 ### Access paths
 
-After you compromise a system, you usually keep access in one of two ways:
+After compromise, you usually keep access in one of two ways:
 
 1. **Legitimate remote access protocols**
 2. **Interactive shells**
 
 #### Legitimate remote access protocols
 
-Use these when you recover valid credentials during exploitation.
+Use these when you recover valid credentials.
 
 Common options:
 
@@ -619,9 +628,9 @@ Common options:
 
 #### Interactive shells
 
-Use these when you do not have valid admin credentials.
+Use these when you need command execution without stable remote login access.
 
-A payload must hook into the target command interpreter, such as `/bin/bash`, `cmd.exe`, or `powershell.exe`.
+A payload usually hooks into `/bin/bash`, `cmd.exe`, or `powershell.exe`.
 
 ### Main shell types
 
@@ -633,127 +642,38 @@ A payload must hook into the target command interpreter, such as `/bin/bash`, `c
 
 #### Reverse shell
 
-Your machine listens on a port such as `4444`.
+The target connects back to your listener.
 
-```bash
-nc -lvnp 4444
-```
+Use it when outbound traffic from the target works.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
-
-Next, make the target connect back to your listener.
-
-Before you trigger the payload, confirm the IP address the target should use.
-
-```bash
-ip a
-```
-
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-Use the VPN interface IP, such as `tun0`, when the target is only reachable through the lab VPN.
-
-On a real engagement, you may use another interface such as `eth0`.
-{% endhint %}
-
-**Reverse shell command**
-
-The exact command depends on the target OS and the tools available on the host.
-
-Use [Payload All The Things](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/) to choose a payload that fits the target.
-
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
-
-Run the payload through your exploit path, such as an RCE, a Python exploit, or a Metasploit module.
-
-If it works, your `netcat` listener should receive the connection:
-
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+Start with [WF-Reverse Shell](exploitation/wf-reverse-shell.md).
 
 #### Bind shell
 
-With a bind shell, the target opens a listening port.
+The target exposes a listening port.
 
-You connect to that port to access the target shell.
+You connect directly to that port.
 
-Use [Payload All The Things](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-bind-cheatsheet/) to choose a bind shell payload that fits the target.
-
-{% hint style="warning" %}
-Bind shells often fail on real targets because inbound firewall rules block the exposed port.
-{% endhint %}
-
-In this example, the target listens on `0.0.0.0:1234` so you can connect from your machine.
-
-The following image shows example bind shell commands:
-
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
-
-**Connect with netcat**
-
-After the target starts listening, connect to that port with `netcat`:
-
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
-
-Bind shells can be convenient when they stay running.
-
-If your connection drops, you may reconnect without rerunning the exploit.
-
-If the process stops or the target reboots, you still lose access.
-
-#### Upgrade a basic shell to a full TTY
-
-Many `netcat` shells are unstable and lack job control.
-
-Use the `python` and `stty` method to improve interactivity.
-
-Run this inside the shell:
-
-```bash
-python -c 'import pty; pty.spawn("/bin/bash")'
-```
-
-Then press `Ctrl+Z` to background the session.
-
-On your local terminal, run the `stty` command shown below:
-
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
-
-After that, bring the shell back with `fg`.
-
-If the screen looks blank, press `Enter` or run `reset`.
-
-You should now have a more usable TTY with better terminal behavior.
-
-**Fix terminal size**
-
-Sometimes the upgraded shell still has the wrong rows, columns, or terminal type.
-
-Open another local terminal and collect your `TERM`, `rows`, and `columns` values:
-
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
-
-Then apply those values inside the upgraded shell:
-
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
-
-At that point, the shell should behave much closer to a normal SSH session.
+Start with [WF-Bind Shell](exploitation/wf-bind-shell.md).
 
 #### Web shell
 
-A web shell is a script placed in a reachable web directory.
+A web shell runs commands through HTTP or HTTPS.
 
-You interact with it over HTTP or HTTPS from a browser or with `curl`.
+Use it after file upload, write access to the webroot, or web-based RCE.
 
-Use it when:
+Start with [WF-Web Shell](exploitation/wf-web-shell.md).
 
-* you gain file upload
-* you have command injection or RCE in a web app
-* you need a simple way to run commands through the web server
+### Shell stabilization
 
-Main tradeoffs:
+Basic shells often lack job control and terminal features.
 
-* it is usually less interactive than a reverse shell
-* commands may be logged by the web application
-* it is often best used as a stepping stone to a reverse shell or TTY
+Upgrade them early.
 
+Common fixes:
+
+* spawn a PTY with `python3`
+* set `TERM=xterm`
+* set terminal `rows` and `columns`
+
+Use [WF-Reverse Shell](exploitation/wf-reverse-shell.md) for the full upgrade flow.
