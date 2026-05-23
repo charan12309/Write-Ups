@@ -21,6 +21,8 @@
         * [Host and Port Scanning](readme/ctf-modules/information-gathering/network-enumeration-with-nmap/host-and-port-scanning.md)
         * [Saving the Results](readme/ctf-modules/information-gathering/network-enumeration-with-nmap/saving-the-results.md)
         * [Service Enumeration](readme/ctf-modules/information-gathering/network-enumeration-with-nmap/service-enumeration.md)
+        * [NSE](readme/ctf-modules/information-gathering/network-enumeration-with-nmap/nse.md)
+        * [Performance](readme/ctf-modules/information-gathering/network-enumeration-with-nmap/performance.md)
   * [HTB Machines](readme/htb-machines/README.md)
     * [Easy](readme/htb-machines/easy/README.md)
       * [Nibbles](readme/htb-machines/easy/page-1.md)
