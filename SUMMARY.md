@@ -1,7 +1,8 @@
 # Table of contents
 
 * [CTF & Security Writeups](README.md)
-  * [Pre-Requisites](readme/pre-requisites.md)
+  * [Pre-Requisites](readme/pre-requisites/README.md)
+    * [Networking](readme/pre-requisites/networking.md)
   * [HTB Modules](readme/ctf-modules/README.md)
     * [Practice strategy](readme/ctf-modules/practice-strategy.md)
     * [Introduction to the penetration tester path](readme/ctf-modules/intro_to_penetration_testing.md)
