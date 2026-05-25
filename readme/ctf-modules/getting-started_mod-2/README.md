@@ -45,7 +45,7 @@ Quick links:
 
 The shell takes user input and passes commands to the operating system to perform a specific function.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port
 
@@ -55,7 +55,7 @@ They allow a computer to route different types of traffic simultaneously over a 
 
 {% include "../../../.gitbook/includes/protocol-comparison-tcp-vs....md" %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Web server
 
@@ -77,7 +77,7 @@ Secure Shell is a network protocol that runs on port 22 by default and provides 
 
 SSH can use password authentication or public-key authentication with a public and private key pair.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Using Netcat
 
@@ -248,7 +248,7 @@ Nmap is used to scan ports and let us know the services that are running.
 
 Basic Nmap scan. This checks the 1,000 most common ports and runs a TCP scan by default:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap <TARGET_IP>
@@ -258,7 +258,7 @@ We can use the `-sC` parameter to specify that `Nmap` scripts should be used to 
 
 <br>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nmap -sV -sC -p- <TARGET_IP>
@@ -356,7 +356,7 @@ Listing available shares:
 smbclient -N -L \\\\<TARGET_IP>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After finding a non-default share like `users`, we attempt to connect to it.
 
@@ -364,7 +364,7 @@ After finding a non-default share like `users`, we attempt to connect to it.
 smbclient \\\\<TARGET_IP>\\<SHARE_NAME>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If this fails, we need to find valid credentials elsewhere and then try again.
 
@@ -374,7 +374,7 @@ smbclient -U <USERNAME> \\\\<TARGET_IP>\\<SHARE_NAME>
 
 After this, the tool asks for a password. Once inside the `smb: \>` prompt, it functions similarly to a basic FTP or Linux shell.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can now use the `get` command to download the `passwords.txt` file.
 
@@ -594,7 +594,7 @@ WordPress found at `/IP/wordpress`
 
 After service fingerprinting, the next goal is to find public exploits that match the exact version.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Searchsploit tip:** Use `-m` to copy an exploit into your current directory.
 

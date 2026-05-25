@@ -50,6 +50,7 @@
   * [HTB Machines](readme/htb-machines/README.md)
     * [Starting Point](readme/htb-machines/starting-point/README.md)
       * [Vaccine](readme/htb-machines/starting-point/vaccine.md)
+      * [Oopsie](readme/htb-machines/starting-point/oopsie.md)
     * [Easy](readme/htb-machines/easy/README.md)
       * [Nibbles](readme/htb-machines/easy/page-1.md)
       * [GettingStarted](readme/htb-machines/easy/gettingstarted.md)
