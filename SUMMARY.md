@@ -34,6 +34,7 @@
         * [DNS](readme/ctf-modules/information-gathering/service-enumeration/dns.md)
         * [SMTP](readme/ctf-modules/information-gathering/service-enumeration/smtp.md)
         * [IMAP & POP3](readme/ctf-modules/information-gathering/service-enumeration/imap-and-pop3.md)
+        * [SNMP](readme/ctf-modules/information-gathering/service-enumeration/snmp.md)
       * [Web Enumeration](readme/ctf-modules/information-gathering/web-enumeration.md)
       * [Application Enumeration](readme/ctf-modules/information-gathering/application-enumeration.md)
       * [Active Directory Enumeration](readme/ctf-modules/information-gathering/active-directory-enumeration.md)
