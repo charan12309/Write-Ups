@@ -8,6 +8,7 @@ Use this page to enumerate IMAP and POP3, validate access, and review risky sett
 * **Core difference:** POP3 is download-and-delete by default. IMAP keeps mail on the server and syncs state across devices.
 * **Key ports:** POP3 uses `TCP 110` and `TCP 995`. IMAP uses `TCP 143` and `TCP 993`.
 * **Manual interaction:** `openssl s_client` gives direct access to secure POP3 and IMAP sessions.
+* **Pre-auth checks:** `CAPABILITY` and `CAPA` reveal supported auth methods and extensions before login.
 * **Fast validation:** `curl` can confirm mailbox access quickly when credentials work.
 * **Dangerous settings:** `auth_debug_passwords = yes` and related Dovecot options can leak credentials into logs.
 
@@ -92,7 +93,39 @@ openssl s_client -connect <TARGET_IP>:993
 ```
 {% endcode %}
 
+#### Plaintext sockets with `ncat`
+
+If the target exposes plaintext mail services, use `ncat` instead of `telnet and can also use telnet`.
+
+{% code title="Connect to plaintext POP3 and IMAP" %}
+```bash
+# Connect to plaintext POP3
+ncat <TARGET_IP> 110
+
+# Connect to plaintext IMAP
+ncat <TARGET_IP> 143
+```
+{% endcode %}
+
 ### Manual command streams
+
+#### Capability checks before authentication
+
+Check server capabilities before sending credentials.
+
+This reveals supported auth methods, `AUTH=ANONYMOUS`, and whether `STARTTLS` is available or required.
+
+**IMAP capability probe**
+
+```
+A001 CAPABILITY
+```
+
+**POP3 capability probe**
+
+```
+CAPA
+```
 
 #### POP3 active session
 
@@ -117,10 +150,13 @@ A001 LOGIN robin robin          # Login using raw user credentials
 A002 LIST "" *                  # Enumerate all root and sub-folder trees
 A003 SELECT INBOX               # Open a folder to query content
 A004 FETCH 1 BODY[TEXT]         # Extract the text content from mail ID 1
+A004 FETCH 1 all                # Pull headers, metadata, routing details, and body in one response
 A005 LOGOUT                     # Safely disconnect from the IMAP shell
 ```
 
-[https://donsutherland.org/crib/imap](https://donsutherland.org/crib/imap)&#x20;
+Use `FETCH 1 all` when `BODY[TEXT]` returns incomplete results or the message contains nested parts.
+
+[https://donsutherland.org/crib/imap](https://donsutherland.org/crib/imap)
 
 #### Parsing IMAP directory flags
 
