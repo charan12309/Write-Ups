@@ -25,3 +25,5 @@ gobuster dns -d <DOMAIN> -w /usr/share/SecLists/Discovery/DNS/namelist.txt
 * `200` content
 * `301` redirects
 * `403` forbidden paths
+
+<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
