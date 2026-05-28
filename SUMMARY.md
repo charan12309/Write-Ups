@@ -53,6 +53,7 @@
           * [Footprinting - hard](readme/ctf-modules/information-gathering/service-enumeration/lab-attack-chains/footprinting-hard.md)
       * [Web Enumeration](readme/ctf-modules/information-gathering/web-enumeration/README.md)
         * [Passive Web Enumeration](readme/ctf-modules/information-gathering/web-enumeration/passive-web-enumeration.md)
+        * [Domain Enumeration](readme/ctf-modules/information-gathering/web-enumeration/domain-enumeration.md)
       * [Application Enumeration](readme/ctf-modules/information-gathering/application-enumeration.md)
       * [Active Directory Enumeration](readme/ctf-modules/information-gathering/active-directory-enumeration.md)
     * [Pre-Exploitation](readme/ctf-modules/pre-exploitation/README.md)
