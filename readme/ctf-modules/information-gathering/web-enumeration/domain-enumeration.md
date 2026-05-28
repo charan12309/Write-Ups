@@ -1,7 +1,5 @@
 # Domain Enumeration
 
-Use this page as CPTS prep notes for DNS and domain enumeration.
-
 Use it when you need fast DNS recon, subdomain clues, and infrastructure context.
 
 ### Why DNS matters
