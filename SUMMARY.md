@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Cyber Security Writeups](README.md)
-  * [Networking](readme/networking.md)
   * [CPTS](readme/ctf-modules/README.md)
     * [Introduction to the penetration tester path](readme/ctf-modules/intro_to_penetration_testing.md)
     * [Getting started](readme/ctf-modules/getting-started_mod-2/README.md)
@@ -67,6 +66,7 @@
       * [Shells and Payloads](readme/ctf-modules/pre-exploitation/shells-and-payloads/README.md)
         * [Bind Shell](readme/ctf-modules/pre-exploitation/shells-and-payloads/bind-shell.md)
         * [Reverse Shell](readme/ctf-modules/pre-exploitation/shells-and-payloads/reverse-shell.md)
+        * [Untitled](readme/ctf-modules/pre-exploitation/shells-and-payloads/untitled.md)
       * [MSF](readme/ctf-modules/pre-exploitation/msf.md)
       * [Web Proxies](readme/ctf-modules/pre-exploitation/web-proxies.md)
     * [Exploitation](readme/ctf-modules/exploitation/README.md)
