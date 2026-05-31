@@ -84,6 +84,8 @@
         * [Miscellaneous File Transfer Methods](readme/ctf-modules/post-exploitation/file-transfers/miscellaneous-file-transfer-methods.md)
         * [File Encryption](readme/ctf-modules/post-exploitation/file-transfers/file-encryption.md)
         * [Catching files over https-Nginx](readme/ctf-modules/post-exploitation/file-transfers/catching-files-over-https-nginx.md)
+        * [LOTL](readme/ctf-modules/post-exploitation/file-transfers/lotl.md)
+        * [Detect or be Detected](readme/ctf-modules/post-exploitation/file-transfers/detect-or-be-detected.md)
       * [Lateral Movement](readme/ctf-modules/post-exploitation/lateral-movement.md)
       * [PrivEsc](readme/ctf-modules/post-exploitation/privesc/README.md)
         * [Linux PrivEsc](readme/ctf-modules/post-exploitation/privesc/linux-privesc.md)
