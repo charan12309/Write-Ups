@@ -66,6 +66,7 @@
       * [Vuln Assessment](readme/ctf-modules/pre-exploitation/vuln-assessment.md)
       * [Shells and Payloads](readme/ctf-modules/pre-exploitation/shells-and-payloads/README.md)
         * [Bind Shell](readme/ctf-modules/pre-exploitation/shells-and-payloads/bind-shell.md)
+        * [Reverse Shell](readme/ctf-modules/pre-exploitation/shells-and-payloads/reverse-shell.md)
       * [MSF](readme/ctf-modules/pre-exploitation/msf.md)
       * [Web Proxies](readme/ctf-modules/pre-exploitation/web-proxies.md)
     * [Exploitation](readme/ctf-modules/exploitation/README.md)
