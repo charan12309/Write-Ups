@@ -2,8 +2,6 @@
 
 #### **What is a Network Router?**
 
-This video provides an introduction to the role of routers in networking. Below are the key takeaways from the lesson:
-
 **The Role of a Switch vs. Router**
 
 * **Switches:** These are used to connect devices on the same local network. They operate at Layer 2 of the OSI model, primarily using MAC addresses to ensure data packets reach the correct destination within a local segment.
